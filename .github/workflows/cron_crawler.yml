@@ -2,19 +2,14 @@ name: Comperio Daily Price Crawler
 
 on:
   schedule:
-    # 매일 한국 시간(KST) 오전 9시 정각에 자동으로 실행 (UTC 기준 00:00)
     - cron: '0 0 * * *'
-  workflow_dispatch: # 깃허브 웹페이지에서 수동으로 실행할 수 있도록 허용
+  workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env: 
       TZ: Asia/Seoul
-
-    steps:
-    - name: Checkout source code
-      uses: actions/checkout@v3
 
     steps:
     - name: Checkout source code
